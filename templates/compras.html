@@ -4,12 +4,13 @@
 
     <h3>Página de compras</h3>
     <ul>
-        <li>Rosa pra ela</li>
-        <li>Maconha</li>
-        <li>Ópio</li>
-        <li>Vidro quebrado para a cocaina</li>
-        <li>abacaxi</li>
-        <li>cachimbo de crack</li>
+        
+        {% for compra in compras %}
+
+            <li>{{compra['item']}}</li>
+
+        {% endfor %}
+
     </ul>
 
 {% endblock %}
