@@ -2,7 +2,15 @@
 
 {% block conteudo %}
 
-    <h3>Página de compras</h3>
+    <h3>Adicionar items</h3>
+
+    <form action="compras_adc.php" method="POST">
+        <input type="text" name="item" placeholder="Escreva o nome do item">
+
+        <input type="submit" value="Adicionar">
+    </form>
+
+    <h3>Minha lista de compras</h3>
     <ul>
         
         {% for compra in compras %}
