@@ -15,7 +15,12 @@
         
         {% for compra in compras %}
 
-            <li>{{compra['item']}}</li>
+            <li> {{compra['item']}}
+            
+                <a href="compras_rm.php?id={{compra['id']}}">Apagar</a>
+                <a href="compras_edt.php?id={{compra['id']}}">Editar</a>
+
+            </li>
 
         {% endfor %}
 

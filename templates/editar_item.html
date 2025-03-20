@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+
+{% block conteudo %}
+
+    <h3>Adicionar items</h3>
+
+    <form action="compras_edt_back.php?id={{id}}" method="POST">
+        <input type="text" name="item" placeholder="Edite o nome do item" value="{{item}}">
+
+        <input type="submit" value="Editar">
+    </form>
+
+{% endblock %}
