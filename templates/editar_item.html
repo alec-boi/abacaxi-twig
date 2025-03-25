@@ -4,8 +4,9 @@
 
     <h3>Adicionar items</h3>
 
-    <form action="compras_edt_back.php?id={{id}}" method="POST">
-        <input type="text" name="item" placeholder="Edite o nome do item" value="{{item}}">
+    <form action="compras_edt.php" method="POST">
+        <input type="hidden" name="id" value="{{dados.id}}">
+        <input type="text" name="item" placeholder="Edite o nome do item" value="{{dados.item}}">
 
         <input type="submit" value="Editar">
     </form>
