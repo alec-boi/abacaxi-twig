@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Mar-2025 às 12:34
+-- Tempo de geração: 27-Mar-2025 às 14:14
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -33,6 +33,27 @@ CREATE TABLE `compras` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Extraindo dados da tabela `compras`
+--
+
+INSERT INTO `compras` (`id`, `item`) VALUES
+(3, 'banana'),
+(8, 'abacaxi'),
+(9, 'outro abacaxi');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `compromissos`
+--
+
+CREATE TABLE `compromissos` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `data_cmp` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -43,6 +64,12 @@ ALTER TABLE `compras`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `compromissos`
+--
+ALTER TABLE `compromissos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -50,7 +77,13 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT de tabela `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de tabela `compromissos`
+--
+ALTER TABLE `compromissos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

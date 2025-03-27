@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+
+{% block conteudo %}
+
+    <h3>Compromissos</h3>
+
+    <form action="compromisso_adc.php" method="POST">
+        <input type="text" name="titulo" placeholder="Escreva o titulo do compromisso"><br>
+
+        <input type="date" name="data_cmp">
+
+        <input type="submit" value="Adicionar">
+    </form>
+
+    <a href="compromisso_ordenar.php">Ordenar por data</a>
+
+    <h3>Minha lista de compromissos</h3>
+
+    <ul>
+        
+        {% for compromisso in compromissos %}
+
+            <li> {{compromisso['titulo']}} | {{compromisso['data_cmp']}} |{% if compromisso['data_cmp'] in weekends%} É fim de semana. | {% endif %} <a href="compromisso_rm.php?id={{compromisso['id']}}">Apagar</a> | <a href="compromisso_edt.php?id={{compromisso['id']}}">Editar</a></li>
+
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}
