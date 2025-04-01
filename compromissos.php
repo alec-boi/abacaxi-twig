@@ -5,7 +5,24 @@ require('inc/banco.php');
 
 use Carbon\Carbon;
 
-$dados = $pdo->query('SELECT * FROM compromissos');
+$ordem = $_GET['ordem'] ?? 'asc-date';
+
+    switch ($ordem) {
+        case 'des-date':
+            $query = 'SELECT * FROM compromissos ORDER BY data_cmp DESC';
+            break;
+        case 'asc-alph':
+            $query = 'SELECT * FROM compromissos ORDER BY titulo';
+            break;
+        case 'des-alph':
+            $query = 'SELECT * FROM compromissos ORDER BY titulo DESC';
+            break;
+        default:
+            $query = 'SELECT * FROM compromissos ORDER BY data_cmp';
+            break;
+    } 
+
+$dados = $pdo->query($query);
 $compromissos = $dados->fetchAll(PDO::FETCH_ASSOC);
 
 $weekends = [];
@@ -18,5 +35,6 @@ foreach ($compromissos as $compromisso) {
 
 echo $twig->render('compromissos.html', [
     'compromissos' => $compromissos,
-    'weekends' => $weekends
+    'weekends' => $weekends,
+    'ordem' => $ordem
 ]);
