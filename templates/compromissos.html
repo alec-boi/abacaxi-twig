@@ -12,7 +12,13 @@
         <input type="submit" value="Adicionar">
     </form>
 
-    <a href="compromisso_ordenar.php">Ordenar por data</a>
+    <form action="compromissos.php" method="GET">
+        <select name="ordenar" onchange="this.form.submit()">
+            <option value="asc-date" {% if ordem == 'asc-date' %}selected{% endif %}>Ordenar por data (crescente)</option>
+            <option value="des-date" {% if ordem == 'des-date' %}selected{% endif %}>Ordenar por data (decrescente)</option>
+            <option value="alphabet" {% if ordem == 'alphabet' %}selected{% endif %}>Ordenar alfabéticamente</option>
+        </select>
+    </form>
 
     <h3>Minha lista de compromissos</h3>
 
