@@ -52,4 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 
-echo $twig->render('login.html', ['logged' => $_SESSION['logged']]);
+echo $twig->render('login.html', 
+    [
+        'logged' => $_SESSION['logged'] ?? false,
+        'usuario' => $_SESSION['usuario'] ?? ''
+    ]);

@@ -19,5 +19,7 @@
 
     echo $twig->render('compromissos.html', [
         'compromissos' => $compromissos,
-        'weekends' => $weekends
+        'weekends' => $weekends,
+        'logged' => $_SESSION['logged'] ?? false,
+        'usuario' => $_SESSION['usuario'] ?? ''
     ]);

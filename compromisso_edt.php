@@ -18,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
         echo $twig->render('editar_comp.html', [
             'dados' => $dados,
-            'logged' => $_SESSION['logged']
+            'logged' => $_SESSION['logged'] ?? false,
+            'usuario' => $_SESSION['usuario'] ?? ''
         ]);
     }
 

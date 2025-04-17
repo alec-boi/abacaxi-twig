@@ -11,5 +11,7 @@
 
     echo $twig->render('horario.html', [
         'data' => $data_e_hora,
-        'amanha' => $amanha
+        'amanha' => $amanha,
+        'logged' => $_SESSION['logged'] ?? false,
+        'usuario' => $_SESSION['usuario'] ?? ''
     ]);

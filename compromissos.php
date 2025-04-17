@@ -36,5 +36,7 @@ foreach ($compromissos as $compromisso) {
 echo $twig->render('compromissos.html', [
     'compromissos' => $compromissos,
     'weekends' => $weekends,
-    'ordem' => $ordem
+    'ordem' => $ordem,
+    'logged' => $_SESSION['logged'] ?? false,
+    'usuario' => $_SESSION['usuario'] ?? ''
 ]);

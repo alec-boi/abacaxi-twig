@@ -10,5 +10,6 @@ session_start();
 
 echo $twig->render('compras.html', [
     'compras' => $comp,
-    'logged' => $_SESSION['logged']
+    'logged' => $_SESSION['logged'] ?? false,
+    'usuario' => $_SESSION['usuario'] ?? ''
 ]);
