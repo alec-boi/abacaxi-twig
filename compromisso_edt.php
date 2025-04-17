@@ -3,6 +3,11 @@
 require_once('twig-carregar.php');
 require('inc/banco.php');
 
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+    header("location: login.php");
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $id = $_GET['id'] ?? null;
 
@@ -13,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
         echo $twig->render('editar_comp.html', [
             'dados' => $dados,
+            'logged' => $_SESSION['logged']
         ]);
     }
 

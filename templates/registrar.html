@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+
+{% block conteudo %}
+
+    <h3>Registrar usuário</h3>
+
+    <form action="registrar.php" method="POST">
+        <input type="text" name="username" placeholder="Nome de usuário"><br>
+        <input type="password" name="password" placeholder="Senha"><br>
+        <input type="password" name="confirm_password" placeholder="Confirmar senha"><br>
+
+        <input type="submit" value="Registrar">
+    </form>
+
+{% endblock %}

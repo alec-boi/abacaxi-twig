@@ -2,6 +2,11 @@
 
     require('inc/banco.php');
 
+    if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+        header("location: login.php");
+        exit;
+    }
+
     $titulo = $_POST['titulo'] ?? null;
     $data = $_POST['data_cmp'] ?? null;
 
